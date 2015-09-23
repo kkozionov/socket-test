@@ -12,7 +12,7 @@ var http = require('http').createServer(app);
 http.listen(process.env.port, function () {
   console.log("HTTP started at %s", process.env.port);
 
-  var io = require('socket.io')(http);
+  var io = require('socket.io').listen(http, {'transports': ['websocket', 'polling']});
 
   io.on('connection', function(socket){
     socket.on('chat message', function(msg){
