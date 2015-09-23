@@ -29,9 +29,9 @@ io.on('connection', function(socket){
   });
 });
 
-http.listen(80, function () {
-  console.log("UP!");
-});
+//http.listen(80, function () {
+//  console.log("UP!");
+//});
 
 // view engine setup
 //app.set('views', path.join(__dirname, 'views'));
