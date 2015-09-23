@@ -22,7 +22,9 @@ var bodyParser = require('body-parser');
 var app = express();
 var http = require('http').createServer(app);
 
-http.listen(80, function () {
+http.listen(process.env.port, function () {
+  console.log("HTTP started at %s", process.env.port);
+
   var io = require('socket.io')(http);
 
   io.on('connection', function(socket){
