@@ -9,7 +9,7 @@ var server = app.listen(process.env.port || 3000, function () {
 
 var io = require('socket.io').listen(server, {
     'transports': ['websocket', 'polling'],
-    'resource': '/ws/socket.io'
+    'path': '/ws/socket.io'
 });
 
 io.on('connection', function(socket){
