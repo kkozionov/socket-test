@@ -3,9 +3,9 @@ var path = require('path');
 
 var app = express();
 
-var server = app.listen(process.env.port, function () {
-  console.info('Express server started');
-});
+var server = require('http').createServer(app).listen(process.env.port, function () {
+  console.log('sdfsdf');
+};
 
 var io = require('socket.io')(server, {
   'resource': '/socket.io',
