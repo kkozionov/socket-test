@@ -5,7 +5,7 @@ var app = express();
 
 var server = require('http').createServer(app).listen(process.env.port, function () {
   console.log('sdfsdf');
-};
+});
 
 var io = require('socket.io')(server, {
   'resource': '/socket.io',
