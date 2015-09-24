@@ -3,7 +3,7 @@ var path = require('path');
 
 var app = express();
 
-var server = app.listen(process.env.port || 3000, function () {
+var server = app.listen(process.env.port, function () {
   console.info('Express server started');
 });
 
