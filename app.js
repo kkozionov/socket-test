@@ -7,15 +7,11 @@ var server = app.listen(process.env.port, function () {
   console.info('Express server started');
 });
 
-var opts = {};
-
-if (process.env.IISNODE_VERSION) {
-  opts['resource'] = '/socket.io';
-  opts['path'] = '/socket.io';
-  opts['match origin protocol'] = true;
-}
-
-var io = require('socket.io')(server, opts);
+var io = require('socket.io')(server, {
+  'resource': '/socket.io',
+  'path': '/socket.io',
+  'match origin protocol': true
+});
 
 io.on('connection', function(socket){
   socket.on('chat message', function(msg){
