@@ -9,6 +9,11 @@ var server = app.listen(process.env.port, function () {
 
 var io = require('socket.io').listen(server, {'transports': ['websocket', 'polling']});
 
+io.configure(function() {
+  io.set('transports', [ 'websocket' ]);
+  io.set('resource', 'socket.io');
+});
+
 io.on('connection', function(socket){
   socket.on('chat message', function(msg){
     io.emit('chat message', msg);
