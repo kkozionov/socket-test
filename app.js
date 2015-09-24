@@ -7,11 +7,7 @@ var server = app.listen(process.env.port, function () {
   console.info('Express server started');
 });
 
-var io = require('socket.io')(server, {
-  'resource': '/socket.io',
-  'path': '/socket.io',
-  'match origin protocol': true
-});
+var io = require('socket.io')(server);
 
 io.on('connection', function(socket){
   socket.on('chat message', function(msg){
