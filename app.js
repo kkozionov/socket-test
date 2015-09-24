@@ -12,6 +12,7 @@ var opts = {};
 if (process.env.IISNODE_VERSION) {
   opts['resource'] = '/socket.io';
   opts['path'] = '/socket.io';
+  opts['match origin protocol'] = true;
 }
 
 var io = require('socket.io')(server, opts);
